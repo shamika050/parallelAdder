@@ -1,11 +1,13 @@
 package com.threads.future.ParallelProcessor;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
-import org.junit.*;
-import org.junit.Test;	
+import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+
+import static org.mockito.Mockito.*;
+
 
 /**
  * Unit test for simple App.
@@ -13,6 +15,9 @@ import org.junit.Test;
 public class SumOfListTest 
 {
 
+	@Mock
+	ISumOfList sumOfList;
+	
 	public SumOfListTest() {
 		
 	}
@@ -27,4 +32,20 @@ public class SumOfListTest
     	
     	assertEquals(expected, actual);
     }
+    
+    @Test
+    public void checkSumwWithMock() {
+    	
+    	SumOfList checkSumList = new SumOfList(1, 10);
+    	
+    	ISumOfList sumOfList = Mockito.mock(SumOfList.class);
+    	
+    	when(sumOfList.calculateSumParrallay()).thenReturn(55);
+    	
+    	
+    	int actual = checkSumList.calculateSumParrallay();
+    	
+    	assertEquals(sumOfList.calculateSumParrallay(), actual);
+    }
+    
 }

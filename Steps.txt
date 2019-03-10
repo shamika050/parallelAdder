@@ -1,0 +1,18 @@
+1. Create suitable archtype
+
+2. Create project and add dependancies
+    1.TDD with moquito
+    2.Create a Callable Future
+    3.Create a Thread pool
+    4.submit an recive the future objects
+    5.Get the sum from future objects
+
+3. Build with maven
+
+4. Test code coverage
+
+5. Set up Jenkins/Git
+
+6. Run test suit with Jenkins
+
+7. Check with GC viewer/Jprofiler
